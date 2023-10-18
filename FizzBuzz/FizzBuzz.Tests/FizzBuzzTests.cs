@@ -1,3 +1,5 @@
+using FizzBuzz.Contracts;
+
 namespace FizzBuzz.Tests
 {
     public class FizzBuzzTests
