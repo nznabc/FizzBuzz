@@ -1,6 +1,6 @@
 ﻿using FizzBuzz.Contracts;
 
-namespace FizzBuzz
+namespace FizzBuzz.Rules
 {
     internal class DivideByThree : BaseRule
     {

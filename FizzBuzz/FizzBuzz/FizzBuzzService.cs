@@ -14,6 +14,8 @@ namespace FizzBuzz
 
         public string[] ShowResult(IEnumerable<int> inputs)
         {
+            ValidateParameters(inputs);
+
             var result = new List<string>();
 
             foreach (var input in inputs)
@@ -41,6 +43,19 @@ namespace FizzBuzz
             }
 
             return result.ToArray();
+
+            void ValidateParameters(IEnumerable<int> inputs)
+            {
+                if (!inputs.Any())
+                {
+                    throw new ArgumentNullException();
+                }
+
+                if (!inputs.All(x => x >= 1 && x <= 100))
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
         }
     }
 }

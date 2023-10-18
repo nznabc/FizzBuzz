@@ -55,5 +55,35 @@ namespace FizzBuzz.Tests
             //Assert
             Assert.Equal(expectedResult, result);
         }
+
+        [Fact]
+        public void ShowResult_ReturnsArgumentNullException()
+        {
+            // Arrange
+            var inputs = new List<int>();
+
+            var expectedResult = new string[] { "1", "2", "Fizz" };
+
+            // Act
+            var exception = () => _sut.ShowResult(inputs);
+
+            // Assert
+            Assert.Throws<ArgumentNullException>(exception);
+        }
+
+        [Fact]
+        public void ShowResult_ReturnsArgumentOutOfRangeException()
+        {
+            // Arrange
+            var inputs = Enumerable.Range(-1, 16);
+
+            var expectedResult = new string[] { "1", "2", "Fizz" };
+
+            // Act
+            var exception = () => _sut.ShowResult(inputs);
+
+            // Assert
+            Assert.Throws<ArgumentOutOfRangeException>(exception);
+        }
     }
 }
